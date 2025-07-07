@@ -1,0 +1,28 @@
+lzc-sdk-version: "0.1"
+name: Better Go Playground
+min_os_version: 1.3.8
+package: cloud.lazycat.app.better-go-playground
+version: 2.5.7
+description: 更好的Go代码沙盒，支持自动补全和语法高亮
+homepage: https://github.com/x1unix/go-playground
+author: x1unix
+application:
+    subdomain: better-go-playground
+    background_task: true
+    multi_instance: false
+    public_path:
+        - /
+    routes:
+        - /=http://better-go-playground:8000/
+    
+services:
+    better-go-playground:
+      image: docker.1ms.run/x1unix/go-playground:2.5.7
+      environment:
+      - APP_DEBUG={{.U.enable_app_debug}}
+      - SERVER_ANNOUNCEMENT={{.U.app_announcement}}
+      - APP_PERMIT_ENV_VARS={{ .U.app_permit_env_vars}}
+      - APP_CLEAN_INTERVAL: '24h'
+
+
+

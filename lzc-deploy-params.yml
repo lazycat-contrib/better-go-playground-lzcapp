@@ -1,0 +1,36 @@
+params:
+  - id: enable_app_debug
+    type: bool
+    name: "Enable app debug logging"
+    description: "Enables debug logging."
+    default_value: false
+
+  - id: app_announcement 
+    type: string
+    name: "servrer announcement"
+    description: "Server announcement message to be displayed on top of page"
+    default_value: ""
+    optional: true
+
+  - id: app_permit_env_vars 
+    type: string
+    name: "sRestricts list of environment variables"
+    description: "Restricts list of environment variables passed to Go compiler,default GOSUMDB,GOPROXY"
+    default_value: "GOSUMDB,GOPROXY"
+    optional: true
+  
+
+locales:
+  zh:
+    enable_app_debug:
+      name: "启用调试日志"
+      description: "显示程序的调试日志，不建议勾选，可能显示太多无用信息"
+     
+    app_announcement:
+      name: "服务器公告"
+      description: "服务器公告消息将显示在页面顶部,格式为Base64编码的msgpack字符串，如果不明白请勿设置。"
+
+    app_permit_env_vars:
+     name: "限制传递给Go编译器的环境变量列表"
+     description: "限制传递给Go编译器的环境变量列表,默认GOSUMDB,GOPROXY"
+  
