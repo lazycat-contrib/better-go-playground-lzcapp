@@ -17,7 +17,8 @@ application:
     
 services:
     better-go-playground:
-      image: docker.1ms.run/x1unix/go-playground:2.5.7
+    # docker.1ms.run/x1unix/go-playground:2.5.7
+      image: registry.lazycat.cloud/czyt/x1unix/go-playground:2f5f31107d6a6ea7
       environment:
       - APP_DEBUG={{.U.enable_app_debug}}
       - SERVER_ANNOUNCEMENT={{.U.app_announcement}}
