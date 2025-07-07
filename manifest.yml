@@ -17,13 +17,13 @@ application:
     
 services:
     better-go-playground:
-    # docker.1ms.run/x1unix/go-playground:2.5.7
+        # x1unix/go-playground:2.5.7
       image: registry.lazycat.cloud/czyt/x1unix/go-playground:2f5f31107d6a6ea7
       environment:
       - APP_DEBUG={{.U.enable_app_debug}}
       - SERVER_ANNOUNCEMENT={{.U.app_announcement}}
       - APP_PERMIT_ENV_VARS={{ .U.app_permit_env_vars}}
-      - APP_CLEAN_INTERVAL: '24h'
+      - APP_CLEAN_INTERVAL=24h
 
 
 
