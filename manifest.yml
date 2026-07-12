@@ -1,20 +1,17 @@
 application:
-    subdomain: better-go-playground
-    background_task: true
-    multi_instance: false
-    public_path:
-        - /
-    routes:
-        - /=http://better-go-playground:8000/
-    
+  subdomain: better-go-playground
+  background_task: true
+  multi_instance: false
+  public_path:
+    - /
+  routes:
+    - /=http://better-go-playground:8000/
 services:
-    better-go-playground:
-        # upstream: x1unix/go-playground:2.5.7
-      image: registry.lazycat.cloud/czyt/x1unix/go-playground:2f5f31107d6a6ea7
-      environment:
+  better-go-playground:
+    # upstream: x1unix/go-playground:3.0.0
+    image: registry.lazycat.cloud/czyt/x1unix/go-playground:87842d0f4dc0f108
+    environment:
       - APP_DEBUG={{.U.enable_app_debug}}
       - SERVER_ANNOUNCEMENT={{.U.app_announcement}}
       - APP_PERMIT_ENV_VARS={{ .U.app_permit_env_vars}}
       - APP_CLEAN_INTERVAL=24h
-
-
