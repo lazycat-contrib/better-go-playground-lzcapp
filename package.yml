@@ -1,0 +1,16 @@
+package: cloud.lazycat.app.better-go-playground
+version: 2.5.7
+name: Better Go Playground
+description: "更好的 Go 代码沙盒，支持自动补全和语法高亮"
+min_os_version: 1.5.0
+homepage: https://github.com/x1unix/go-playground
+author: x1unix
+
+locales:
+  zh:
+    name: "Better Go Playground"
+    description: "支持自动补全和语法高亮的 Go 代码沙盒"
+  en:
+    name: "Better Go Playground"
+    description: "A Go code playground with autocompletion and syntax highlighting"
+

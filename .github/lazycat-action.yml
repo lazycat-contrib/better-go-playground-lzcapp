@@ -1,0 +1,33 @@
+version: 1
+project:
+  root: .
+  build_config: lzc-build.yml
+  package_file: package.yml
+  output: dist/better-go-playground.lpk
+update:
+  strategy: publish
+  allow_downgrade: false
+  version_source:
+    type: image
+    image: playground
+build:
+  run_buildscript: false
+images:
+  - id: playground
+    target: service
+    service: better-go-playground
+    source: x1unix/go-playground
+    channel: stable
+    tag_regex: '^v?[0-9]+\.[0-9]+\.[0-9]+$'
+    delivery:
+      mode: lazycat
+stores:
+  official:
+    enabled: true
+    skip_if_version_exists: true
+  private:
+    enabled: true
+    skip_if_version_exists: true
+    name: Better Go Playground
+    summary: 支持自动补全和语法高亮的 Go 代码沙盒
+
