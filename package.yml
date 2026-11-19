@@ -1,4 +1,5 @@
 package: cloud.lazycat.app.better-go-playground
+license: MIT
 version: 3.0.0
 name: Better Go Playground
 description: "更好的 Go 代码沙盒，支持自动补全和语法高亮"
